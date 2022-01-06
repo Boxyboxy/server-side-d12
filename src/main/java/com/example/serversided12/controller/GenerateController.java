@@ -28,6 +28,7 @@ public class GenerateController {
     generate.setNumberVal(10);
     // "generate" ties to the html object of the page
     model.addAttribute("generate", generate);
+    // generate.html is returned
     return "generate";
   }
 
