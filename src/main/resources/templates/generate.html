@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!-- declares thyme leaf as an extension on top of the normal html -->
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generate Random Image</title>
+  </head>
+  <body>
+    <fieldset>
+      <h1>
+        How many numbers do you wish to generate?
+        <!-- Do not use the html action, use the thymeleaf action. @{/generate} is equivalent to localhost:8080/generate-->
+        <!-- ${generate} links up with the controller  -->
+        <!-- th:field = "*{numberVal}" is associated to the attribute of the generate object, equivalent to "Generate.java.getNumberVal(}" -->
+        <!-- Binding: this databinding architecture of the MVC model whereby the html is linked up to the controller -->
+        <form
+          action="#"
+          th:action="@{/generate}"
+          th:object="${generate}"
+          method="post"
+        >
+          <input type="text" th:field="*{numberVal}" />
+          <input type="submit" value="Generate" />
+        </form>
+      </h1>
+    </fieldset>
+  </body>
+</html>
