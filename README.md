@@ -7,7 +7,7 @@
 5. create repository on github website
 6. `git init`
 7. `git remote -v`
-8. `git remote add heroku <heroku git url>`
-9. `git remote add origin main <github url>`
+8. `git remote add origin <github url>`
+9. `git remote add heroku <heroku git url>`
 10. `git pull origin main` to pull README file from github repo
 11. `git push heroku main`
