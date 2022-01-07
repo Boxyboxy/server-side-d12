@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- declares thyme leaf as an extension on top of the normal html -->
+<!-- declares thyme leaf as an extension on top of the normal html, xmlns stands for xml namespace -->
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
@@ -11,14 +11,15 @@
     <fieldset>
       <h1>
         How many numbers do you wish to generate?
-        <!-- Do not use the html action, use the thymeleaf action. @{/generate} is equivalent to localhost:8080/generate-->
-        <!-- ${generate} links up with the controller  -->
+        <!-- action = '#' invalidates action, not necessary since th:action takes precedence. But this practice is cleaner. -->
+        <!-- Do not use the html action, use the thymeleaf action. @{/result} is equivalent to localhost:8080/result-->
+        <!-- ${generate} links up with the object instantiated in the controller-->
         <!-- th:field = "*{numberVal}" is associated to the attribute of the generate object, equivalent to "Generate.java.getNumberVal(}" -->
         <!-- Binding: this databinding architecture of the MVC model whereby the html is linked up to the controller -->
         <form
           action="#"
-          th:action="@{/generate}"
-          th:object="${generate}"
+          th:action="@{/result}"
+          th:object="${generateObj}"
           method="post"
         >
           <input type="text" th:field="*{numberVal}" />

@@ -10,6 +10,10 @@
     <script src="" async defer></script>
 
     <!-- <li th:text="${numVal}"></li> -->
+    <h1>
+      Your list of <span th:text="${numberOfNumbers}"></span> randomly generated
+      numbers.
+    </h1>
     <img
       th:each="numVal : ${randNumResult}"
       th:src="@{${'/images/' +numVal}}"
